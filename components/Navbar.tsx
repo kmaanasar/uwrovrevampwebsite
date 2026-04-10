@@ -1,0 +1,77 @@
+"use client";
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+
+const navLinks = [
+  { href: "/mini-mate", label: "Mini-MATE" },
+  { href: "/competition", label: "The Competition" },
+  { href: "/past-rovs", label: "Past ROVs" },
+  { href: "/outreach", label: "Outreach" },
+  { href: "/sponsors", label: "Sponsors" },
+  { href: "/contact", label: "Contact" },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="https://uwrovorg.wordpress.com/wp-content/uploads/2022/08/uwrov_logo_2025_color-1.png"
+              alt="UWROV Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
+
+          {/* Desktop */}
+          <div className="hidden md:flex items-center gap-6">
+            {navLinks.map((l) => (
+              <Link key={l.href} href={l.href}
+                className="text-sm text-gray-600 hover:text-[#4b2e83] transition-colors duration-200 font-medium">
+                {l.label}
+              </Link>
+            ))}
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe82YhpZVW22KgC2KjTKcbZlaZlW_83nLEyGWaAmY9JyK_N-g/viewform"
+              target="_blank" rel="noopener noreferrer"
+              className="btn-primary text-sm">
+              Apply Now
+            </a>
+          </div>
+
+          {/* Mobile toggle */}
+          <button onClick={() => setOpen(!open)} className="md:hidden text-gray-500 hover:text-gray-900 p-2" aria-label="Toggle menu">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {open
+                ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4 flex flex-col gap-3">
+          {navLinks.map((l) => (
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
+              className="text-gray-700 hover:text-[#4b2e83] py-2 text-sm font-medium transition-colors">
+              {l.label}
+            </Link>
+          ))}
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe82YhpZVW22KgC2KjTKcbZlaZlW_83nLEyGWaAmY9JyK_N-g/viewform"
+            target="_blank" rel="noopener noreferrer"
+            className="btn-primary text-sm text-center mt-2">
+            Apply Now
+          </a>
+        </div>
+      )}
+    </nav>
+  );
+}
