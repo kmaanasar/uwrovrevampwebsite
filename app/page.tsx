@@ -21,7 +21,6 @@ const teams = [
   },
   {
     name: "Software",
-    icon: "",
     description: "Develops command & control software including pilot interfaces, autonomous systems, machine learning, and computer vision.",
     image: "https://uwrov.org/wp-content/uploads/2022/11/screen-shot-2022-11-03-at-5.02.17-pm.png",
   },
@@ -33,14 +32,14 @@ const teams = [
 ];
 
 const achievements = [
-  { stat: "Top 10", label: "MATE World Championship", sub: "4 consecutive years" },
+  { stat: "Top 10", label: "MATE World Championship", sub: "5 consecutive years" },
   { stat: "1st", label: "Engineering Presentation", sub: "2025 MATE Championship" },
   { stat: "1st", label: "Technical Documentation", sub: "Published in Journal of Ocean Technology" },
   { stat: "1st", label: "Machine Learning Challenge", sub: "2025 MATE Championship" },
 ];
 
 const openSource = [
-  { label: "Boxfish 2.0 CAD & Documentation", href: "https://cad.onshape.com/documents/b552b8a10e5ba0f2e8b8d98f/w/d73461d7e6c29a09c69c034b/e/b2adaa076967a7831fcccb27" },
+  { label: "Conduit CAD & Documentation", href: "https://cad.onshape.com/documents/b552b8a10e5ba0f2e8b8d98f/w/d73461d7e6c29a09c69c034b/e/b2adaa076967a7831fcccb27" },
   { label: "T-200 Thruster Guards", href: "https://uwrov.org/2023/06/23/uwrov-t-200-thruster-module/" },
   { label: "GitHub", href: "https://github.com/uwrov" },
   { label: "Past ROVs", href: "/past-rovs" },
@@ -74,7 +73,7 @@ export default function HomePage() {
                 Applications
               </a>
               <Link href="/contact"
-                className="border-2 border-[#4b2e83] text-[#a78bca] hover:bg-[#4b2e83] hover:text-white font-semibold px-6 py-2.5 transition-colors">
+                className="bg-[#4b2e83] hover:bg-[#3a2266] text-white font-semibold px-6 py-2.5 transition-colors">
                 Contact Us
               </Link>
             </div>
@@ -102,11 +101,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="float-slow">
-            <div className="overflow-hidden border border-[#4b2e83]">
+          <div>
+            <div className="overflow-hidden">
               <Image
-                src="https://uwrov.org/wp-content/uploads/2025/11/rovmainrender-website-2.png"
-                alt="UWROV underwater robot ROV render"
+                src="/rov-cad.png"
+                alt="UWROV underwater robot CAD render"
                 width={600}
                 height={450}
                 className="w-full object-cover"
@@ -123,7 +122,7 @@ export default function HomePage() {
           <h2 className="sr-only">Achievements</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {achievements.map((a) => (
-              <div key={a.stat + a.label} className="border border-[#4b2e83] p-6 text-center">
+              <div key={a.stat + a.label} className="p-6 text-center">
                 <div className="text-3xl font-black text-[#4b2e83] mb-1">{a.stat}</div>
                 <div className="text-white font-semibold text-sm mb-1">{a.label}</div>
                 <div className="text-gray-400 text-xs">{a.sub}</div>
@@ -166,7 +165,7 @@ export default function HomePage() {
             </div>
             <div>
               <Image
-                src="/team.jpg"
+                src="/team.JPG"
                 alt="UWROV 2025-26 team photo"
                 width={600}
                 height={400}
@@ -186,7 +185,7 @@ export default function HomePage() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teams.map((team) => (
-              <div key={team.name} className="border border-gray-800 hover:border-[#4b2e83] overflow-hidden group transition-colors">
+              <div key={team.name} className="overflow-hidden group">
                 <div className="h-48 overflow-hidden bg-gray-900">
                   <Image
                     src={team.image}

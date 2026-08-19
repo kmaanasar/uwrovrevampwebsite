@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/mini-mate", label: "Mini-MATE" },
+  { href: "/meet-the-team", label: "Meet the Team" },
   { href: "/competition", label: "The Competition" },
-  { href: "/past-rovs", label: "Past ROVs" },
-  { href: "/outreach", label: "Outreach" },
-  { href: "/sponsors", label: "Sponsors" },
+  { href: "/rovs", label: "ROVs" },
+  { href: "/floats", label: "Floats" },
+  { href: "/outreach-and-sponsorship", label: "Outreach & Sponsorship" },
   { href: "/contact", label: "Contact" },
 ];
 
