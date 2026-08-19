@@ -15,8 +15,8 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-roboto-slab), Georgia, serif;
-  background-color: #ffffff;
-  color: #111827;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .btn-primary {

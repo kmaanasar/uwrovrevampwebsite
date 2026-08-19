@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={robotoSlab.variable}>
-      <body className="bg-white text-gray-900 antialiased">
+      <body className="bg-black text-gray-900 antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />
