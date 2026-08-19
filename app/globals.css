@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  font-family: var(--font-roboto-slab), Georgia, serif;
+}
+
 :root {
   --uw-purple: #4b2e83;
   --uw-purple-dark: #3a2266;
@@ -14,7 +18,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font-geist, system-ui), sans-serif;
+  font-family: var(--font-roboto-slab), Georgia, serif;
   background-color: #ffffff;
   color: #111827;
 }
@@ -55,12 +59,11 @@ body {
 
 .card {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
   border-radius: 0.75rem;
-  transition: box-shadow 0.2s, border-color 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s;
 }
 .card:hover {
-  border-color: #4b2e83;
   box-shadow: 0 4px 20px rgba(75, 46, 131, 0.12);
 }
 
@@ -77,9 +80,3 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
-@keyframes float {
-  0%,100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-.float-slow { animation: float 6s ease-in-out infinite; }
