@@ -11,21 +11,25 @@ export const metadata: Metadata = {
 const teams = [
   {
     name: "Mechanical",
+    href: "/subteams/mechanical",
     description: "Designs and manufactures the frame, pressure hull, manipulator, and other systems using CAD software and rapid prototyping.",
     image: "https://uwrov.org/wp-content/uploads/2024/10/cad-boxfish.png",
   },
   {
     name: "Electrical",
+    href: "/subteams/electrical",
     description: "Designs and supports electronic systems including internal circuitry, sensors, and thrusters. Uses ECAD to design custom circuit boards.",
     image: "https://uwrov.org/wp-content/uploads/2024/11/rasppipcb.png",
   },
   {
     name: "Software",
+    href: "/subteams/software",
     description: "Develops command & control software including pilot interfaces, autonomous systems, machine learning, and computer vision.",
     image: "https://uwrov.org/wp-content/uploads/2022/11/screen-shot-2022-11-03-at-5.02.17-pm.png",
   },
   {
     name: "Business",
+    href: "/subteams/business",
     description: "Organizes outreach, connects with sponsors, and composes competition-critical materials including marketing displays and technical documentation.",
     image: "https://uwrov.org/wp-content/uploads/2025/11/uwrov-marketing-display-2025-1-1.png",
   },
@@ -186,7 +190,7 @@ export default function HomePage() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teams.map((team) => (
-              <div key={team.name} className="overflow-hidden group">
+              <Link key={team.name} href={team.href} className="overflow-hidden group block">
                 <div className="h-48 overflow-hidden bg-gray-900">
                   <Image
                     src={team.image}
@@ -197,10 +201,10 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="text-white font-bold mb-2">{team.name}</h3>
+                  <h3 className="text-white font-bold mb-2 group-hover:text-[#a78bca] transition-colors">{team.name}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{team.description}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
