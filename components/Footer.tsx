@@ -5,10 +5,10 @@ export default function Footer() {
   return (
     <footer className="bg-[#4b2e83] text-white mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <Image
-              src="https://uwrovorg.wordpress.com/wp-content/uploads/2022/08/uwrov_logo_2025_color-1.png"
+              src="/logo.png"
               alt="UWROV Logo"
               width={140}
               height={50}
@@ -23,12 +23,28 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Navigation</h3>
             <ul className="space-y-2 text-sm">
               {[
-                ["Mini-MATE", "/mini-mate"],
+                ["Meet the Team", "/meet-the-team"],
                 ["The Competition", "/competition"],
-                ["Past ROVs", "/past-rovs"],
-                ["Outreach", "/outreach"],
-                ["Sponsors", "/sponsors"],
-                ["Contact", "/contact"],
+                ["ROVs", "/rovs"],
+                ["Floats", "/floats"],
+                ["Outreach & Sponsorship", "/outreach-and-sponsorship"],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link href={href} className="text-purple-200 hover:text-white transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Subteams</h3>
+            <ul className="space-y-2 text-sm">
+              {[
+                ["Mechanical", "/subteams/mechanical"],
+                ["Electrical", "/subteams/electrical"],
+                ["Software", "/subteams/software"],
+                ["Business", "/subteams/business"],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="text-purple-200 hover:text-white transition-colors">

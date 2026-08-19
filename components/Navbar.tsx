@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="https://uwrovorg.wordpress.com/wp-content/uploads/2022/08/uwrov_logo_2025_color-1.png"
+              src="/logo.png"
               alt="UWROV Logo"
               width={120}
               height={40}
